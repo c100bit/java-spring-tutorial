@@ -4,21 +4,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <context:property-placeholder location="musicPlayer.properties"/>
+    <context:component-scan base-package="org.example"/>
 
-    <bean id="rockMusic" class="org.example.RockMusic"/>
-    <bean id="classicalMusic" class="org.example.ClassicalMusic" factory-method="getClassicalMusic"
-          init-method="doMyInit" destroy-method="doMyDestroy"/>
 
-    <bean id="musicPlayer" class="org.example.MusicPlayer">
-        <property name="music" ref="rockMusic"/>
-        <property name="list">
-            <list>
-                <ref bean="classicalMusic"/>
-                <ref bean="rockMusic"/>
-            </list>
-        </property>
-        <property name="name" value="${musicPlayer.name}"/>
-        <property name="volume" value="${musicPlayer.volume}"/>
-    </bean>
 </beans>
