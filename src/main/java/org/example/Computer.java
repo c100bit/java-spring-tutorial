@@ -12,4 +12,9 @@ public class Computer {
         int id = 1;
         this.musicPlayer = musicPlayer;
     }
+
+    @Override
+    public String toString() {
+        return musicPlayer.playMusic();
+    }
 }
