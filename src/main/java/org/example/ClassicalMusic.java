@@ -8,7 +8,7 @@ public class ClassicalMusic implements Music {
     }
 
     @Override
-    public String getSong() {
-        return "Rhapsody";
+    public String[] getSong() {
+        return new String[]{"Rhapsody1", "Rhapsody2", "Rhapsody3"};
     }
 }
